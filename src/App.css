@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+.glassmorph {
+  background: rgba(250, 244, 244, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.day {
+  background: rgb(34, 162, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 162, 195, 1) 42%,
+    rgba(253, 187, 45, 1) 96%
+  );
+}
+.night {
+  background: rgb(136, 163, 241);
+  background: linear-gradient(
+    216deg,
+    rgba(34, 74, 195, 1) 7%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

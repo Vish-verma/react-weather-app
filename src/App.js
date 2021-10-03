@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import WeatherApp from "./components/WeatherApp";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="day" maxWidth="md" fixed>
+      <Box
+        // sx={{ height: "100vh" }}
+        border={2}
+        borderRadius={5}
+        borderColor="grey"
+        margin={5}
+        padding={5}
+        className="glassmorph"
+      >
+        {/* <p>{url}</p> */}
+
+        <WeatherApp />
+      </Box>
+    </Container>
   );
 }
 
