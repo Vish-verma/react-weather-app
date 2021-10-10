@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 
 function App() {
   return (
-    <Container className="day" maxWidth="md" fixed>
+    <Container maxWidth="md" fixed>
       <Box
         // sx={{ height: "100vh" }}
         border={2}
@@ -13,7 +13,7 @@ function App() {
         borderColor="grey"
         margin={5}
         padding={5}
-        className="glassmorph"
+        className="night glassmorph"
       >
         {/* <p>{url}</p> */}
 

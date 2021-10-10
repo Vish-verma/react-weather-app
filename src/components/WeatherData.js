@@ -9,55 +9,92 @@ const WeatherData = (props) => {
       setWeatherReport(props.weatherReport.data);
     }
   }, [props.weatherReport]);
-
+  if (!weatherReport.current) {
+    return "";
+  }
   return (
-    <>
-      <div>
+    <div
+      className="glassmorph"
+      style={{ margin: "5px", padding: "5px", width: "50%" }}
+    >
+      <h3>
+        <b>Weather Report</b>
+      </h3>
+      <hr style={{ width: "90%", border: "1px solid black" }} />
+      {weatherReport.current && (
+        <img src={weatherReport.current.condition.icon} alt="weather" />
+      )}
+      <div className="displayStyle">
         {weatherReport.location && (
           <>
             <div>
-              <span>Name : {weatherReport.location.name}</span>
+              <span>
+                <b>Name : </b> {weatherReport.location.name}
+              </span>
             </div>
             <div>
-              <span>Region :{weatherReport.location.region}</span>
+              <span>
+                <b>Region : </b>
+                {weatherReport.location.region}
+              </span>
             </div>
             <div>
-              <span> Country :{weatherReport.location.country}</span>
+              <span>
+                {" "}
+                <b>Country : </b>
+                {weatherReport.location.country}
+              </span>
             </div>
             <div>
-              <span>Time :{weatherReport.location.localtime}</span>
+              <span>
+                <b>Time : </b>
+                {weatherReport.location.localtime}
+              </span>
             </div>
           </>
         )}
       </div>
 
       {weatherReport.current && (
-        <div>
-          <hr />
-          <h4>Weather Report</h4>
+        <div className="displayStyle">
           <br />
-          <img src={weatherReport.current.condition.icon} alt="weather" />
+
           <div>
             <div>
-              <span>temp_c : {weatherReport.current.temp_c}</span>
+              <span>
+                <b>temp_c : </b> {weatherReport.current.temp_c}
+              </span>
             </div>
             <div>
-              <span>temp_f :{weatherReport.current.temp_f}</span>
+              <span>
+                <b>temp_f : </b>
+                {weatherReport.current.temp_f}
+              </span>
             </div>
             <div>
-              <span> condition :{weatherReport.current.condition.text} </span>
+              <span>
+                {" "}
+                <b>condition : </b>
+                {weatherReport.current.condition.text}{" "}
+              </span>
             </div>
 
             <div>
-              <span>wind_mph :{weatherReport.current.wind_mph}</span>
+              <span>
+                <b>wind_mph : </b>
+                {weatherReport.current.wind_mph}
+              </span>
             </div>
             <div>
-              <span>humidity :{weatherReport.current.humidity}</span>
+              <span>
+                <b>humidity :</b>
+                {weatherReport.current.humidity}
+              </span>
             </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
